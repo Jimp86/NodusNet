@@ -1,0 +1,827 @@
+<!doctype html>
+<!--[if IE 7 ]>
+<html lang="en-gb" class="isie ie7 oldie no-js"> <![endif]-->
+<!--[if IE 8 ]>
+<html lang="en-gb" class="isie ie8 oldie no-js"> <![endif]-->
+<!--[if IE 9 ]>
+<html lang="en-gb" class="isie ie9 no-js"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!-->
+<!--<![endif]-->
+<!--<![endif]-->
+<html lang="es">
+  <head>
+    <title>NodusNet</title>
+    <meta charset="utf-8">
+    <!-- Meta -->
+    <meta name="keywords" content=""/>
+    <meta name="author" content="">
+    <meta name="robots" content=""/>
+    <meta name="description" content=""/>
+    {% load static %}
+    <!-- this styles only adds some repairs on idevices  -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="/static/images/favicon.ico">
+
+    <!-- Google fonts - witch you want to use - (rest you can just remove) -->
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic,700,700italic,800,800italic'
+          rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto:100,200,300,400,500,600,700,800,900' rel='stylesheet'
+          type='text/css'>
+
+    <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- stylesheets -->
+    <script src="https://kit.fontawesome.com/b5e26b5da0.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" media="screen" href="/static/js/bootstrap/bootstrap.min.css" type="text/css"/>
+    <link rel="stylesheet" href="/static/js/mainmenu/menu.css" type="text/css"/>
+    <link rel="stylesheet" href="/static/css/default.css" type="text/css"/>
+    <link rel="stylesheet" href="/static/css/layouts.css" type="text/css"/>
+    <link rel="stylesheet" href="/static/css/shortcodes.css" type="text/css"/>
+    <link rel="stylesheet" media="screen" href="/static/css/responsive-leyouts.css" type="text/css"/>
+    <link rel="stylesheet" href="/static/js/masterslider/style/masterslider.css"/>
+    <link rel="stylesheet" href="/static/css/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/Simple-Line-Icons-Webfont/simple-line-icons.css"
+          media="screen"/>
+    <link rel="stylesheet" href="/static/css/et-line-font/et-line-font.css">
+    <link href="/static/js/animations/css/animations.min.css" rel="stylesheet" type="text/css" media="all"/>
+    <link rel="stylesheet" type="text/css" href="/static/js/cubeportfolio/cubeportfolio.min.css">
+    <link href="/static/js/owl-carousel/owl.carousel.css" rel="stylesheet">
+    <link rel="stylesheet" href="/static/js/ytplayer/ytplayer.css"/>
+    <link rel="stylesheet" href="/static/js/style-swicher/style-swicher.css" type="text/css"/>
+    <link rel="stylesheet" href="/static/js/custom-scrollbar/jquery.mCustomScrollbar.css">
+    <link rel="stylesheet" type="text/css" href="/static/js/smart-forms/smart-forms.css">
+
+    <link rel="stylesheet" href="{{principal.color_interfaz}}"/>
+  </head>
+
+  <body>
+    <div class="site_wrapper">
+        <div class="topbar orange2 topbar-padding">
+          <div class="container">
+            <!--div class="topbar-left-items">
+              <ul class="toplist toppadding pull-left paddtop1">
+                <li class="rightl">Nodusnet</li>
+              </ul>
+            </div-->
+              <!--end left-->
+            <div class="topbar-right-items pull-right">
+              <ul class="toplist toppadding">
+                <!--li class="lineright"><a href="#">Iniciar Sesión</a></li>
+                <li class="lineright"><a href="#">Registrate</a></-->
+                <li class="rightl">Nodusnet</li>
+                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                <li><a href="#"><i class="fa fa-whatsapp"></i></a></li>
+                <!--li class="last"><a href="#"><i class="fa fa-youtube"></i></a></-->
+              </ul>
+            </div>
+              <!--end right-->
+          </div>
+        </div>
+        <div class="clearfix"></div>
+        {% block header %}
+        <div id="header">
+            <div class="container">
+                <div class="navbar navbar-default yamm">
+                    <div class="navbar-header">
+                        <button type="button" data-toggle="collapse" data-target="#navbar-collapse-grid"
+                                class="navbar-toggle two three"><span class="icon-bar"></span><span class="icon-bar"></span><span
+                                class="icon-bar"></span></button>
+                        <a href="/" class="navbar-brand" style="padding-left: 20px"><img src="/media/{{principal.logo}}" style="width: 150px" alt=""/></a></div>
+
+                    <div id="navbar-collapse-grid" class="navbar-collapse collapse pull-right">
+                        <ul class="nav navbar-nav">
+                            <li class="dropdown"><a href="/" class="dropdown-toggle active">Home</a></li>
+                            <li class="dropdown"><a href="#servicios" class="dropdown-toggle">Servicio</a></li>
+                            <li class="dropdown"><a href="#planes" class="dropdown-toggle">Planes</a></li>
+                            <li class="dropdown"><a href="#promociones" class="dropdown-toggle">Promociones</a></li>
+                            <!--li class="dropdown"><a href="#" class="dropdown-toggle">Blog</a></-->
+                            <li class="dropdown"><a href="#nosotros" class="dropdown-toggle">Nodusnet</a></li>
+                            <li class="dropdown"><a href="#contacto" class="dropdown-toggle align-1">Contacto</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endblock %}
+
+        <!--end menu-->
+        <div class="clearfix"></div>
+
+        <!-- masterslider -->
+        {% block slider %}
+        <div class="master-slider ms-skin-default" id="masterslider">
+            {% for slider in sliders %}
+                <div class="ms-slide slide-{{ slider.id }}" data-delay="{{ slider.duracion }}">
+                <img src="/static/js/masterslider/blank.gif" data-src="/media/{{ slider.imagen }}" alt=""/>
+                <h3 class="ms-layer text76"
+                    {% if slider.centro %}
+                    style="text-align: center;top: 100px; position: relative;font-size: calc({{ slider.text_size }}+20)px !important;"
+                    {% elif slider.izquierda %}
+                    style="left: {{ slider.posicion_frase1 }}px;top: 100px;font-size: calc({{ slider.text_size }}+20)px !important;"
+                    {% elif slider.derecha %}
+                    style="right: {{ slider.posicion_frase1 }}px;top: 100px;font-size: calc({{ slider.text_size }}+20)px !important;"
+                    {% endif %}
+                    data-type="text"
+                    data-delay="500"
+                    data-ease="easeOutExpo"
+                    data-duration="1230"
+                    data-effect="left(250)"> {{ slider.frase1 }}</h3>
+
+                <h3 class="ms-layer text77"
+                    {% if slider.centro %}
+                    style="text-align: center;top: 260px;position: relative;font-size: calc({{ slider.text_size }}+30)px !important;"
+                    {% elif slider.izquierda %}
+                    style="left: {{ slider.posicion_frase2 }}px;top: 260px;font-size: calc({{ slider.text_size }}+30)px !important;"
+                    {% elif slider.derecha %}
+                    style="right: {{ slider.posicion_frase2 }}px;top: 260px;font-size: calc({{ slider.text_size }}+30)px !important;"
+                    {% endif %}
+                    data-type="text"
+                    data-delay="1000"
+                    data-ease="easeOutExpo"
+                    data-duration="1230"
+                    data-effect="right(250)"> {{ slider.frase2 }}</h3>
+
+                    {% if not slider.centro %}
+                     <h3 class="ms-layer small-line"
+                        {% if slider.izquierda %}
+                        style="left: {{ slider.posicion_texto_decorativo }}px;top: 380px"
+                        {% elif slider.derecha %}
+                        style="right: {{ slider.posicion_texto_decorativo }}px;top: 380px"
+                        {% endif %}
+                        data-type="text"
+                        data-delay="1500"
+                        data-ease="easeOutExpo"
+                        data-duration="1230"
+                        data-effect="left(250)"></h3>
+                    {% endif %}
+                <h3 class="ms-layer text82"
+                    {% if slider.centro %}
+                    style="text-align: center;top: 385px; font-size:20px !important; position: relative"
+                    {% elif slider.izquierda %}
+                    style="left: {{ slider.posicion_texto_decorativo }}px;top: 385px; font-size: 20px !important;"
+                    {% elif slider.derecha %}
+                    style="right: {{ slider.posicion_texto_decorativo }}px;top: 385px;font-size: 20px !important;"
+                    {% endif %}
+                    data-type="text"
+                    data-delay="2000"
+                    data-ease="easeOutExpo"
+                    data-duration="1230"
+
+                    data-effect="right(250)"> {{ slider.texto_decorativo }}</h3>
+
+                {% if not slider.centro %}
+                <h3 class="ms-layer small-line"
+                    {% if slider.izquierda %}
+                    style="left: {{ slider.posicion_texto_decorativo }}px;top:440px;"
+                    {% elif slider.derecha %}
+                    style="right: {{ slider.posicion_texto_decorativo }}px;top:440px;"
+                    {% endif %}
+                    data-type="text"
+                    data-delay="2500"
+                    data-ease="easeOutExpo"
+                    data-duration="1230"
+                    data-effect="left(250)"></h3>
+                {% endif %}
+
+            </div>
+            {% endfor %}
+        </div>
+        {% endblock %}
+        <!-- end of masterslider -->
+
+        <div class="clearfix"></div>
+
+        {% block contenido %}
+
+        {# Servicio #}
+
+        <section id="servicios" class="sec-padding">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-6 screens-top-padding bmargin text-center">
+                  <br>
+                  <br>
+                  <h1 class="font-weight-6 less-mar1 nopadding">Buscas <span class="text-orange-2">Velocidad</span></h1>
+                  <br>
+                  <h5>En Nodusnet sabemos lo importante que es tu tiempo, y queremos que lo aproveches al máximo con nuestro servicio...</h5>
+                  <p>Nos sentimos orgullosos de ser los proveedores que mejor....</p>
+                  <br/>
+                  <!--div class="iconbox-xtiny left round grayoutline2"><i class="fa fa-apple"></i></div>
+                  <div class="iconbox-xtiny left round grayoutline2"><i class="fa fa-android"></i></div>
+                  <div class="iconbox-xtiny left round grayoutline2"><i class="fa fa-behance"></i></div>
+                  <div class="iconbox-xtiny left round grayoutline2"><i class="fa fa-google-plus"></i></div-->
+
+                  <div class="clearfix"></div>
+                  <br/><br/>
+                  <a class="btn btn-orange-2 dark btn-xround" href="#">Ver Planes <i class="fa fa-angle-right"></i></a>
+              </div>
+              <!--end item-->
+
+              <div class="col-md-6 bmargin">
+              <img src="/static/images/servicio/1.png" alt="" class="img-responsive"/>
+              </div>
+              <!--end item-->
+
+            </div>
+          </div>
+        </section>
+        <!-- end section -->
+        <div class="clearfix"></div>
+
+        {# video #}
+        <section>
+            <div class="videobgholder">
+                <div id="wrapper">
+                    <div id="customElement">
+                        <div class="container-fluid nopadding">
+                            <div class="video-overlay bg-opacity-5">
+                                <div class="container video-toppadd video-bopadd">
+                                    <div class="col-md-8 col-centered text-center">
+                                        <h2 class="text-white section-title ubuntu less-mar2 uppercase">Vive la experiencia Nodusnet</h2>
+                                        <button id="togglePlay" class="command vbutton pause" onclick="jQuery('#video').YTPTogglePlay(changeLabel)">Pause</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <a id="video" class="player" data-property="{videoURL:'{{ principal.video_fondo }}',containment:'#customElement', showControls:false, autoPlay:true, loop:true, vol:50, mute:true, startAt:90,  stopAt:109, opacity:1, addRaster:true, quality:'hd720', optimizeDisplay:true}"></a>
+            </div>
+        </section>
+        <!--end section-->
+
+        <div class="clearfix"></div>
+
+        {# Servicio #}
+        <section id="servicios" class="sec-padding">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-6 screens-top-padding bmargin text-center">
+                  <br>
+                  <br>
+                  <h1 class="font-weight-6 less-mar1 nopadding">Buscas <span class="text-orange-2">Velocidad</span></h1>
+                  <br>
+                  <h5>En Nodusnet sabemos lo importante que es tu tiempo, y queremos que lo aproveches al máximo con nuestro servicio...</h5>
+                  <p>Nos sentimos orgullosos de ser los proveedores que mejor....</p>
+                  <br/>
+                  <!--div class="iconbox-xtiny left round grayoutline2"><i class="fa fa-apple"></i></div>
+                  <div class="iconbox-xtiny left round grayoutline2"><i class="fa fa-android"></i></div>
+                  <div class="iconbox-xtiny left round grayoutline2"><i class="fa fa-behance"></i></div>
+                  <div class="iconbox-xtiny left round grayoutline2"><i class="fa fa-google-plus"></i></div-->
+
+                  <div class="clearfix"></div>
+                  <br/><br/>
+                  <a class="btn btn-orange-2 dark btn-xround" href="#">Ver Planes <i class="fa fa-angle-right"></i></a>
+              </div>
+              <!--end item-->
+
+              <div class="col-md-6 bmargin">
+              <img src="/static/images/servicio/2.png" alt="" class="img-responsive"/>
+              </div>
+              <!--end item-->
+
+            </div>
+          </div>
+        </section>
+        <!-- end section -->
+        <div class="clearfix"></div>
+
+        {# slider home #}
+        <section class="parallax-section69">
+          <div class="section-overlay bg-opacity-7">
+              <div class="container sec-tpadding-3 sec-bpadding-3">
+                <div class="row slide-controls-color-13">
+                  <div class="col-md-12 col-centered">
+                    <div class="clearfix"></div>
+                    <div id="owl-demo3" class="owl-carousel">
+                      {# icons #}
+                      {% for home in home %}
+                      <div class="col-md-12">
+                        <h1 class="paddtop1 dosis font-weight-5 text-white lspace-sm text-center animate-in" data-anim-type="fade-in-up" data-anim-delay="100"><span class="text-white">{{ home.nombre }}</span></h1>
+                        <br>
+                        <div class="iconbox-medium round grayoutline2 text-center animate-in" data-anim-type="fade-in-up" data-anim-delay="200"><span class="text-orange-2, {{home.icono }}"></span></div>
+                        <br>
+                        <h4 class="text-white less-mar1 text-center animate-in" data-anim-type="fade-in-down" data-anim-delay="300">{{ home.descripcion }}</h4>
+                        <br/>
+                      </div>
+                      {% endfor %}
+                      <!--end item-->
+
+                      <!--end slide item-->
+                    </div>
+                    <!--end carousel -->
+                  </div>
+                </div>
+              </div>
+          </div>
+        </section>
+
+        <!--end section-->
+        <div class="clearfix"></div>
+
+        {% comment %}<section class="section-light section-side-image clearfix">
+            <div class="img-holder col-md-6 col-sm-3 pull-left">
+                <div class="background-imgholder" style="background:url(/static/images/774.jpg);"><img class="nodisplay-image" src="/static/images/774.jpg" alt=""/></div>
+            </div>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-7 col-md-offset-5 col-sm-8 col-sm-offset-4 text-inner clearfix align-left">
+                        <div class="text-box white padding-7">
+                            <div class="col-xs-12 text-left">
+                                <h1 class="paddtop1 dosis font-weight-5 lspace-sm">Nuestras <span class="text-orange-2">Cualidades</span></h1>
+                                <div class="title-line-4"></div>
+                            </div>
+                            <div class="clearfix"></div>
+                            {% for servicio in servicios %}
+                            <div class="col-md-4">
+                                <div class="feature-box-103 text-center bmargin">
+                                    <div class="iconbox-medium round grayoutline2"><span class="{{servicio.icono}}"></span>
+                                    </div>
+                                    <br/>
+                                    <h4>{{ servicio.nombre }}</h4>
+                                    <p>{{ servicio.descripcion}}</p>
+                                </div>
+                            </div>
+                            {% endfor %}
+                            <!--div class="clearfix"></div>
+                            <br/>
+                            <br/-->
+                            {# <a href="#" class="btn btn-orange-2 dark btn-xround">Más Información</a></div> #}
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--end section-->
+
+        <div class=" clearfix"></div>{% endcomment %}
+
+        {# planes domestico #}
+        <section id="planes" class="sec-padd-default-page">
+        <div class="container">
+          <div class="row">
+            <div class="col-xs-12 text-center">
+              <!--h6 class="nopadding lspace-1">Elije el mejor de</h6-->
+              <h1 class="paddtop1 dosis font-weight-5 lspace-sm">PLAN <span class="text-orange-2">HOME</span></h1>
+              <div class="title-line-4 align-center"></div>
+            </div>
+          </div>
+          <div class="row no-gutter">
+            <div class="col-md-3 col-sm-6 col-xs-12">
+              <div class="pricetable-top-bg-strip"></div>
+              <div class="pricetable-holder7">
+                <div class="title-box">
+                  <h3 class="title font-weight-5 less-mar2">Básico</h3>
+                  <h3 class="title font-weight-5 less-mar2">20 Mbps</h3>
+                </div>
+                <ul class="features-list">
+                  <li>1 GB Bandwidth</li>
+                  <li>256 MB Memory</li>
+                  <li>Unlimited</li>
+                  <li>Full Support</li>
+                  <li>Free Domain</li>
+                </ul>
+                <div class="clearfix"></div>
+                <br/>
+                <br/>
+                <div class="price"><sup>$</sup>20.00<i>/ mo</i></div>
+                <a class="btn btn-orange-2 dark btn-xround" href="#">Elegir</a>
+              </div>
+            </div>
+            <!--end item-->
+
+            <div class="col-md-3 col-sm-6 col-xs-12">
+              <div class="pricetable-top-bg-strip"></div>
+              <div class="pricetable-holder7">
+                <div class="title-box">
+                  <h3 class="title font-weight-5 less-mar2">Standard</h3>
+                  <h3 class="title font-weight-5 less-mar2">30 Mbps</h3>
+                </div>
+                <ul class="features-list">
+                  <li>1 GB Bandwidth</li>
+                  <li>256 MB Memory</li>
+                  <li>Unlimited</li>
+                  <li>Full Support</li>
+                  <li>Free Domain</li>
+                </ul>
+                <div class="clearfix"></div>
+                <br/>
+                <br/>
+                <div class="price"><sup>$</sup>25.00<i>/ mo</i></div>
+                <a class="btn btn-orange-2 dark btn-xround" href="#">Elegir</a>
+              </div>
+            </div>
+            <!--end item-->
+
+            <div class="col-md-3 col-sm-6 col-xs-12">
+              <div class="pricetable-active-bg-strip"></div>
+              <div class="pricetable-holder7 active bmargin">
+                <div class="ribbon"><img src="/static/images/777.png" alt=""/></div>
+                <div class="title-box">
+                  <h3 class="title font-weight-5 less-mar2">Premium</h3>
+                  <h3 class="title font-weight-5 less-mar2">60 Mbps</h3>
+                </div>
+                <ul class="features-list">
+                  <li>1 GB Bandwidth</li>
+                  <li>256 MB Memory</li>
+                  <li>Unlimited</li>
+                  <li>Full Support</li>
+                  <li>Free Domain</li>
+                </ul>
+                <div class="clearfix"></div>
+                <br/>
+                <br/>
+                <div class="price"><sup>$</sup>35.00<i>/ mo</i></div>
+                <a class="btn btn-white btn-xround" href="#">Elegir</a>
+              </div>
+            </div>
+            <!--end item-->
+
+            <div class="col-md-3 col-sm-6 col-xs-12">
+              <div class="pricetable-top-bg-strip"></div>
+              <div class="pricetable-holder7">
+                <div class="title-box">
+                  <h3 class="title font-weight-5 less-mar2">Extremo</h3>
+                  <h3 class="title font-weight-5 less-mar2">100 Mbps</h3>
+                </div>
+                <ul class="features-list">
+                  <li>1 GB Bandwidth</li>
+                  <li>256 MB Memory</li>
+                  <li>Unlimited</li>
+                  <li>Full Support</li>
+                  <li>Free Domain</li>
+                </ul>
+                <div class="clearfix"></div>
+                <br/>
+                <br/>
+                <div class="price"><sup>$</sup>60.00<i>/ mo</i></div>
+                <a class="btn btn-orange-2 dark btn-xround" href="#">Elegir</a> </div>
+            </div>
+            <!--end item-->
+          </div>
+        </div>
+      </section>
+        <!-- end section -->
+
+        <div class="clearfix"></div>
+
+        {# promos #}
+        <section id="promociones" class="parallax-section68">
+            <div class="section-overlay bg-opacity-4">
+              <div class="container sec-tpadding-3 sec-bpadding-3">
+                <div class="row">
+                  <div class="col-md-8 col-centered">
+                    <!--h6 class="text-white lspace-3">Parallax</h6-->
+                    <h1 class="text-uppercase text-white text-bold4 big-text">PROMOCIONES</h1>
+                    <br/>
+                    <br/>
+                    <a class="btn btn-orange-2 btn-xround" href="#">Read more</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </section>
+        <!--end section-->
+        <div class="clearfix"></div>
+
+        <section class="sec-padding">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12 text-center">
+                        <h1 class="paddtop1 dosis font-weight-5 lspace-sm"><span class="text-orange-2">PARA TÍ</span></h1>
+                        <div class="title-line-4 align-center"></div>
+                    </div>
+                    <div class="clearfix"></div>
+                    <div class="col-md-3 col-sm-6 col-xs-12 text-center animate-in" data-anim-type="fade-in-right" data-anim-delay="100">
+                        <div class="feature-box-102 bmargin">
+                            <div class="number-1"></div>
+                            <br/>
+                            <h4>Análisis</h4>
+                            <p>Buscamos la mejor manera de poder ayudarte con tu propósito.</p>
+                        </div>
+                    </div>
+                    <!--end item -->
+
+                    <div class="col-md-3 col-sm-6 col-xs-12 text-center animate-in" data-anim-type="fade-in-right" data-anim-delay="200">
+                        <div class="feature-box-102 bmargin">
+                            <div class="number-2"></div>
+                            <br/>
+                            <h4>Diseño</h4>
+                            <p>Convertimos tú idea en un bonito diseño que podrás cambiar cuando desees.</p>
+                        </div>
+                    </div>
+                    <!--end item -->
+
+                    <div class="col-md-3 col-sm-6 col-xs-12 text-center animate-in" data-anim-type="fade-in-right" data-anim-delay="300">
+                        <div class="feature-box-102 bmargin">
+                            <div class="number-3"></div>
+                            <br/>
+                            <h4>Implementación</h4>
+                            <p>Lanzamos tu proyecto a internet, con la mejor tecnología sobre la nube.</p>
+                        </div>
+                    </div>
+                    <!--end item -->
+
+                    <div class="col-md-3 col-sm-6 col-xs-12 text-center animate-in" data-anim-type="fade-in-right" data-anim-delay="400">
+                        <div class="feature-box-102 bmargin">
+                            <div class="number-4"></div>
+                            <br/>
+                            <h4>Pruebas</h4>
+                            <p>Generamos pruebas y lo ponemos a punto, para que puedas disfrutar de tu tecnología con los estandares de calidad esperados.</p>
+                        </div>
+                    </div>
+                    <!--end item -->
+                </div>
+            </div>
+        </section>
+        <!-- end section -->
+        <div class="clearfix"></div>
+
+        {% comment %}<section class="sec-padding section-orange-2">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12 text-center">
+                        <h1 class="dosis text-white lspace-sm">Suscribete</h1>
+                        <p class="sub-title text-white">Te enviamos lo más actualizado, asi no te perderas ninguno de los beneficios que hemos diseñado para tí.</p>
+                    </div>
+                    <div class="clearfix"></div>
+                    <div class="col-md-12">
+                        <div class="input_holder">
+                            <input class="email_input" type="search" placeholder="Enter your Email Address">
+                            <input name="submit" value="Subscribe" class="email_submit" type="submit">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--end section-->
+        <div class="clearfix"></div>{% endcomment %}
+
+        <section class="section-orange-2 section-less-padding">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-9">
+                        <h3 class="text-white">Beautiful Masonry Portfolio Styles</h3>
+                        <p class="text-white">Lorem ipsum dolor sit amet consectetuer adipiscing elit Suspendisse et justo
+                            Praesent mattis commodo augue Aliquam ornare hendrerit augue Cras tellus In pulvinar lectus a
+                            est Curabitur eget orci.</p>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="margin-top2"></div>
+                        <a class="btn btn-border white-2 btn-large pull-right" href="#">Read more</a></div>
+                </div>
+            </div>
+        </section>
+        <!--end section-->
+        <div class="clearfix"></div>
+
+        {# contacto #}
+        <section id="contacto" class="sec-padding">
+          <div class="container">
+            <div class="row">
+              <div class="col-xs-12 text-center">
+                <h1 class="paddtop1 dosis font-weight-5 lspace-sm"><span class="text-orange-2">CONTACTO</span></h1>
+                <div class="title-line-4 align-center"></div>
+              </div>
+              <div class="col-md-8">
+                <div class="smart-forms bmargin">
+                  <h3>Formulario</h3>
+                  <p>Completa el formulario con todos los datos, y nos pondremos en contacto contigo.</p>
+                  <br/>
+                  <br/>
+
+                  <form method="post" action="php/smartprocess.php" id="smart-form">
+                    <div>
+                      <div class="section">
+                        <label class="field prepend-icon">
+                          <input type="text" name="sendername" id="sendername" class="gui-input" placeholder="Nombre">
+                          <span class="field-icon"><i class="fa fa-user"></i></span>
+                        </label>
+                      </div>
+                      <!-- end section -->
+
+                      <div class="section">
+                        <label class="field prepend-icon">
+                          <input type="email" name="emailaddress" id="emailaddress" class="gui-input" placeholder="Email">
+                          <span class="field-icon"><i class="fa fa-envelope"></i></span>
+                        </label>
+                      </div>
+                      <!-- end section -->
+
+                      <div class="section colm colm6">
+                        <label class="field prepend-icon">
+                          <input type="tel" name="telephone" id="telephone" class="gui-input" placeholder="Tefefóno">
+                          <span class="field-icon"><i class="fa fa-phone-square"></i></span>
+                        </label>
+                      </div>
+                      <!-- end section -->
+
+                      <div class="section">
+                        <label class="field prepend-icon">
+                          <input type="text" name="sendersubject" id="sendersubject" class="gui-input" placeholder="Asunto">
+                          <span class="field-icon"><i class="fa fa-lightbulb-o"></i></span>
+                        </label>
+                      </div>
+                      <!-- end section -->
+
+                      <div class="section">
+                        <label class="field prepend-icon">
+                          <textarea class="gui-textarea" id="sendermessage" name="sendermessage" placeholder="Mensaje"></textarea>
+                          <span class="field-icon"><i class="fa fa-comments"></i></span> <span class="input-hint"> <strong>Nota:</strong> Su mensaje debe contener entre 80 y 300 carácteres</span>
+                        </label>
+                      </div>
+                      <!-- end section -->
+
+                      <!--<div class="section">
+                                   <div class="smart-widget sm-left sml-120">
+                                        <label class="field">
+                                        <input type="text" name="captcha" id="captcha" class="gui-input sfcode" maxlength="6" placeholder="Enter CAPTCHA">
+                                      </label>
+                                      <label class="button captcode">
+                                          <img src="php/captcha/captcha.php?<?php echo time();?>" id="captchax" alt="captcha">
+                                          <span class="refresh-captcha"><i class="fa fa-refresh"></i></span>
+                                      </label>
+                                  </div>
+                      </div>-->
+
+                        <div class="result"></div>
+                        <!-- end .result  section -->
+
+                      </div>
+                      <!-- end .form-body section -->
+                      <div class="form-footer">
+                        <button type="submit" data-btntext-sending="Sending..." class="button btn-primary orange-2">Submit</button>
+                        <button type="reset" class="button"> Cancel </button>
+                      </div>
+                      <!-- end .form-footer section -->
+                    </form>
+                  </div>
+                  <!-- end .smart-forms section -->
+              </div>
+
+              <div class="col-md-4">
+                <br/>
+                <h4>Dirección</h4>
+                No.28 - 63739 street lorem ipsum City, Country <br />
+                Telephone: +1 1234-567-89000<br />
+                FAX: +1 0123-4567-8900<br />
+                <br />
+                E-mail: <a href="mailto:email@example.com">email@example.com</a><br />
+                Website: <a href="index.html">www.example.com</a>
+                <div class="clearfix"></div>
+                <br/><br/>
+                <h4>Encuéntranos</h4>
+                <div id="map" class="map">
+                  <p>This will be replaced with the Google Map.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!--end section-->
+        <div class="clearfix"></div>
+        {% endblock %}
+
+        {% block footer %}
+        <section class="section-fulldark sec-padding">
+          <div class="container">
+            <div class="row">
+            <div class="col-md-4 col-sm-12 colmargin clearfix">
+              <div class="footer-logo"><img src="/static/images/footer-logo.png" alt=""/></div>
+              <div class="footer-logo"><img src="/media/{{principal.logo}}" style="width: 100%" alt=""/></div>
+              <ul class="address-info no-border">
+                <li><i class="fa fa-globe"></i>  {{  datosPrincipales.direccion }}</li>
+                <li><i class="fa fa-whatsapp"></i> {{  datosPrincipales.telefono }}</li>
+                <li class="last"><i class="fa fa-envelope"></i>  {{ datosPrincipales.email }}</li>
+              </ul>
+            </div>
+            <!--end item-->
+
+            <div class="col-md-4 col-sm-12 colmargin tex-left clearfix">
+              <h4 class="uppercase footer-title less-mar3">Links Importantes</h4>
+              <div class="footer-title-bottomstrip"></div>
+              <div class="clearfix"></div>
+              <ul class="usefull-links tex-left no-border">
+                <li><a href="#"><i class="fa fa-angle-right"></i> Placerat bibendum</a></li>
+                <li><a href="#"><i class="fa fa-angle-right"></i> Ullamcorper odio nec turpis</a></li>
+
+              </ul>
+            </div>
+            <!--end item-->
+
+            <div class="col-md-4 col-sm-12 colmargin clearfix">
+              <h4 class="uppercase footer-title less-mar3">Desarrollo</h4>
+              <div class="footer-title-bottomstrip"></div>
+              <div class="image-left">
+                <div class="fo-postimg-inner overflow-hidden"><img src="/static/images/site-img16.jpg" alt=""/></div>
+              </div>
+              <div class="text-box-right">
+                <h5 class="text-white less-mar3"><a href="#">Dizof</a></h5>
+                <span>Desarrollo Web & Apps</span>
+                <div class="footer-post-info"> <span>El </span><span>Guabo</span> </div>
+              </div>
+              <div class="divider-line solid dark margin opacity-5"></div>
+              <div class="image-left">
+                <div class="fo-postimg-inner overflow-hidden"><img src="/static/images/site-img17.jpg" alt=""/></div>
+              </div>
+              <div class="text-box-right">
+                <h5 class="text-white less-mar3"><a href="#">Filmers</a></h5>
+                <span>Contenidos Media</span>
+                <div class="footer-post-info"> <span>El </span><span> Guabo</span> </div>
+              </div>
+            </div>
+            <!--end item-->
+
+            <!--div class="col-md-3 col-sm-12 colmargin clearfix">
+              <h4 class="uppercase footer-title less-mar3">Tags</h4>
+              <div class="footer-title-bottomstrip"></div>
+              <ul class="footer-tags">
+                <li><a href="#">Animation</a></li>
+                <li><a href="#">Art</a></li>
+                <li><a href="#">Photography</a></li>
+                <li><a class="active" href="#">Design</a></li>
+                <li><a href="#">Responsive</a></li>
+                <li><a href="#">Develop</a></li>
+                <li><a href="#">Branding</a></li>
+                <li><a href="#">Clean</a></li>
+              </ul>
+            </div-->
+            <!--end item-->
+
+          </div>
+          </div>
+        </section>
+        <!--end section-->
+        <div class="clearfix"></div>
+
+        <section class="section-copyrights section-less-padding">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-12">
+                <ul class=" social-icons-3">
+                  <li><a href="{{ datosPrincipales.facebbok }}"><i class="fa fa-facebook"></i></a></li>
+                  <li><a href="{{ datosPrincipales.instagram }}"><i class="fa fa-instagram"></i></a></li>
+                  <li><a href="{{ datosPrincipales.youtube }}"><i class="fa fa-youtube"></i></a></li>
+                </ul>
+                <div class="clearfix"></div>
+                <br/>
+                <span>Copyright © 2020 <a href="www.dizof.com">Dizof</a> | All rights reserved.</span>
+              </div>
+            </div>
+          </div>
+        </section>
+        <a href="#" class="scrollup"></a><!-- end scroll to top of the page-->
+        {% endblock %}
+      </div>
+      <!--end sitewraper-->
+
+      <!-- ========== Js Files ========== -->
+
+      <script type="text/javascript" src="/static/js/universal/jquery.js"></script>
+      <script src="/static/js/bootstrap/bootstrap.min.js" type="text/javascript"></script>
+      <script src="/static/js/mainmenu/customeUI.js"></script>
+      <script src="/static/js/mainmenu/jquery.sticky.js"></script>
+      <script src="/static/js/masterslider/masterslider.min.js"></script>
+      <script type="text/javascript">
+      (function ($) {
+          "use strict";
+          var slider = new MasterSlider();
+          // adds Arrows navigation control to the slider.
+          slider.control('arrows');
+          slider.control('bullets');
+          slider.setup('masterslider', {
+              width: 1600,    // slider standard width
+              height: 650,   // slider standard height
+              space: 0,
+              speed: 45,
+              layout: 'fullwidth',
+              loop: true,
+              preload: 0,
+              autoplay: true,
+              view: "parallaxMask"
+          });
+        })(jQuery);
+      </script>
+      {% block script %}
+
+      {% endblock %}
+      <script type="text/javascript" src="/static/js/ytplayer/jquery.mb.YTPlayer.js"></script>
+      <script type="text/javascript" src="/static/js/ytplayer/elementvideo-custom.js"></script>
+      <script type="text/javascript" src="/static/js/ytplayer/play-pause-btn.js"></script>
+      <script src="/static/js/animations/js/animations.min.js" type="text/javascript"></script>
+      <script src="/static/js/animations/js/appear.min.js" type="text/javascript"></script>
+      <script src="/static/js/scrolltotop/totop.js"></script>
+      <script src="/static/js/owl-carousel/owl.carousel.js"></script>
+      <script src="/static/js/owl-carousel/custom.js"></script>
+      <script src="/static/js/custom-scrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
+      <script src="/static/js/style-swicher/style-swicher.js"></script>
+      <script src="/static/js/style-swicher/custom.js"></script>
+      <script src="/static/js/scripts/functions.js" type="text/javascript"></script>
+      <style> .ms-slide .ms-layer, .ms-fixed-layers .ms-layer {pointer-events: auto;} </style>
+    </body>
+
+</html>
