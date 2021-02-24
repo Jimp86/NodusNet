@@ -74,7 +74,7 @@
                 <li class="rightl">Nodusnet</li>
                 <li><a href="https://www.facebook.com/nodusnet.ec" target="_blank"><i class="fa fa-facebook"></i></a></li>
                 <li><a href="https://www.instagram.com/nodusnet.ec" target="_blank"><i class="fa fa-instagram"></i></a></li>
-                <li><a href="https://wa.link/6tm2ir" target="_blank"><i class="fa fa-whatsapp"></i></a></li>
+                <li><a href="https://wa.link/s0p6ro" target="_blank"><i class="fa fa-whatsapp"></i></a></li>
                 <!--li class="last"><a href="#"><i class="fa fa-youtube"></i></a></-->
               </ul>
             </div>
@@ -99,7 +99,7 @@
                             <li class="dropdown"><a href="#planes" class="dropdown-toggle">Planes</a></li>
                             <li class="dropdown"><a href="#promociones" class="dropdown-toggle">Promociones</a></li>
                             <!--li class="dropdown"><a href="#" class="dropdown-toggle">Blog</a></-->
-                            <li class="dropdown"><a href="#nosotros" class="dropdown-toggle">Nodusnet</a></li>
+                            <!--li class="dropdown"><a href="#nosotros" class="dropdown-toggle">Nodusnet</a></li-->
                             <li class="dropdown"><a href="#contacto" class="dropdown-toggle align-1">Contacto</a></li>
                         </ul>
                     </div>
@@ -300,7 +300,7 @@
                       <div class="col-md-12">
                         <h1 class="paddtop1 dosis font-weight-5 text-white lspace-sm text-center animate-in" data-anim-type="fade-in-up" data-anim-delay="100"><span class="text-white">{{ home.nombre }}</span></h1>
                         <br>
-                        <div class="iconbox-medium round grayoutline2 text-center animate-in" data-anim-type="fade-in-up" data-anim-delay="200"><span class="text-orange-2, {{home.icono }}"></span></div>
+                        <div class="iconbox-xlarge text-center animate-in" data-anim-type="fade-in-up" data-anim-delay="200"><span class="text-orange-2, {{home.icono }}"></span></div>
                         <br>
                         <h4 class="text-white less-mar1 text-center animate-in" data-anim-type="fade-in-down" data-anim-delay="300">{{ home.descripcion }}</h4>
                         <br/>
@@ -357,110 +357,41 @@
         <div class=" clearfix"></div>{% endcomment %}
 
         {# planes domestico #}
-        <section id="planes" class="sec-padd-default-page">
+      <section id="planes" class="sec-padd-default-page">
         <div class="container">
           <div class="row">
             <div class="col-xs-12 text-center">
               <h1 class="paddtop1 dosis font-weight-5 lspace-sm text-orange-2">NUESTROS PLANES</h1>
-              <h6 class="nopadding lspace-1">Descubre el poder de la velocidad</h6>
+              <h5>Descubre el poder de la velocidad</h5>
                 <br>
             </div>
           </div>
           <div class="row no-gutter">
               {# basic #}
+            {% for planes in planes %}
             <div class="col-md-3 col-sm-6 col-xs-12">
               <div class="pricetable-top-bg-strip"></div>
               <div class="pricetable-holder7">
                 <div class="title-box">
-                  <h3 class="text-orange-2"><i class="fa fa-home"></i></h3>
-                  <h3 class="title font-weight-5 less-mar2">Básico</h3>
-                  <h3 class="title font-weight-5 less-mar2">20 Mbps</h3>
+                  <h3 class="text-orange-2"><i class="{{ planes.icono }}"></i></h3>
+                  <h3 class="title font-weight-5 less-mar2">{{ planes.nombre }}</h3>
+                  <h3 class="title font-weight-5 less-mar2">{{ planes.megas }}</h3>
                 </div>
                 <ul class="features-list">
-                  <li>1 GB Bandwidth</li>
-                  <li>256 MB Memory</li>
-                  <li>Unlimited</li>
-                  <li>Full Support</li>
-                  <li>Free Domain</li>
+                  <li><strong>Conexión:</strong> {{ planes.conexion }}</li>
+                  <li><strong>Compartición:</strong> {{ planes.comparticion }}</li>
+                  <li><strong>Dispositivos:</strong><br>{{ planes.dispositivos }} conectados</li>
+                  <li><strong>Juegos Móviles:</strong><br>{{ planes.juegosmoviles }}</li>
+                  <li><strong>Juegos Online:</strong><br>{{ planes.juegosonline }}</li>
+                  <li>{{ planes.netflix }}</li>
                 </ul>
                 <div class="clearfix"></div>
                 <br/>
-                <br/>
-                <div class="price"><sup>$</sup>20.00<i>/ mes</i></div>
-                <a class="btn btn-orange-2 dark btn-xround" href="#">Elegir</a>
+                <div class="price">${{ planes.precio }}<i>/mes</i></div>
+                <a class="btn btn-orange-2 dark btn-xround" href="https://{{ planes.info }}" target="_blank">Elegir</a>
               </div>
             </div>
-            <!--end item-->
-              {# standar #}
-            <div class="col-md-3 col-sm-6 col-xs-12">
-              <div class="pricetable-top-bg-strip"></div>
-              <div class="pricetable-holder7">
-                <div class="title-box">
-                  <h3 class="text-orange-2"><i class="fa fa-archive"></i></h3>
-                  <h3 class="title font-weight-5 less-mar2">Standard</h3>
-                  <h3 class="title font-weight-5 less-mar2">30 Mbps</h3>
-                </div>
-                <ul class="features-list">
-                  <li>1 GB Bandwidth</li>
-                  <li>256 MB Memory</li>
-                  <li>Unlimited</li>
-                  <li>Full Support</li>
-                  <li>Free Domain</li>
-                </ul>
-                <div class="clearfix"></div>
-                <br/>
-                <br/>
-                <div class="price"><sup>$</sup>25.00<i>/ mes</i></div>
-                <a class="btn btn-orange-2 dark btn-xround" href="#">Elegir</a>
-              </div>
-            </div>
-            <!--end item-->
-              {# premium #}
-            <div class="col-md-3 col-sm-6 col-xs-12">
-              <div class="pricetable-top-bg-strip"></div>
-              <div class="pricetable-holder7">
-                <div class="title-box">
-                  <h3 class="text-orange-2"><i class="fa fa-gamepad"></i></h3>
-                  <h3 class="title font-weight-5 less-mar2">Premiun</h3>
-                  <h3 class="title font-weight-5 less-mar2">60 Mbps</h3>
-                </div>
-                <ul class="features-list">
-                  <li>1 GB Bandwidth</li>
-                  <li>256 MB Memory</li>
-                  <li>Unlimited</li>
-                  <li>Full Support</li>
-                  <li>Free Domain</li>
-                </ul>
-                <div class="clearfix"></div>
-                <br/>
-                <br/>
-                <div class="price"><sup>$</sup>35.00<i>/ mes</i></div>
-                <a class="btn btn-orange-2 dark btn-xround" href="#">Elegir</a>
-              </div>
-            </div>
-            <!--end item-->
-              {# extremo #}
-            <div class="col-md-3 col-sm-6 col-xs-12">
-              <div class="pricetable-top-bg-strip"></div>
-              <div class="pricetable-holder7">
-                <div class="title-box">
-                  <h3 class="text-orange-2"><i class="fa fa-camera"></i></h3>
-                  <h3 class="title font-weight-5 less-mar2">Extremo</h3>
-                  <h3 class="title font-weight-5 less-mar2">100 Mbps</h3>
-                </div>
-                <ul class="features-list">
-                  <li>1 GB Bandwidth</li>
-                  <li>256 MB Memory</li>
-                  <li>Unlimited</li>
-                  <li>Full Support</li>
-                  <li>Free Domain</li>
-                </ul>
-                <div class="clearfix"></div>
-                <br/>
-                <br/>
-                <div class="price"><sup>$</sup>60.00<i>/ mes</i></div>
-                <a class="btn btn-orange-2 dark btn-xround" href="#">Elegir</a> </div>
-            </div>
+            {% endfor %}
             <!--end item-->
           </div>
         </div>
@@ -476,10 +407,15 @@
                 <div class="row">
                   <div class="col-md-8 col-centered">
                     <!--h6 class="text-white lspace-3">Parallax</h6-->
+                      <br>
                     <h1 class="text-uppercase text-white text-bold4 big-text">PROMOCIONES</h1>
+                      <br>
+                      <br>
+                    <h2 class="paddtop1 dosis font-weight-5 lspace-sm"><span class="text-orange-2">PARA TÍ</span></h2>
+
+                    <!--br/>
                     <br/>
-                    <br/>
-                    <a class="btn btn-orange-2 btn-xround" href="#">Read more</a>
+                    <a class="fa fa-" href="#">Read more</a-->
                   </div>
                 </div>
               </div>
@@ -491,50 +427,30 @@
         <section class="sec-padding">
             <div class="container">
                 <div class="row">
-                    <div class="col-xs-12 text-center">
-                        <h1 class="paddtop1 dosis font-weight-5 lspace-sm"><span class="text-orange-2">PARA TÍ</span></h1>
-                        <div class="title-line-4 align-center"></div>
-                    </div>
-                    <div class="clearfix"></div>
-                    <div class="col-md-3 col-sm-6 col-xs-12 text-center animate-in" data-anim-type="fade-in-right" data-anim-delay="100">
+                    <div class="col-md-6 col-sm-6 col-xs-12 text-center animate-in" data-anim-type="fade-in-right" data-anim-delay="100">
                         <div class="feature-box-102 bmargin">
                             <div class="number-1"></div>
                             <br/>
-                            <h4>Análisis</h4>
-                            <p>Buscamos la mejor manera de poder ayudarte con tu propósito.</p>
+                            <h4>Instalación Gratis</h4>
+                            <p>Solo con tu cédula, puedes empezar a disfrutar del mejor servicio de internet.</p>
+                            <br>
+                            <img src="/static/images/servicio/1.png" alt="" class="img-responsive"/>
                         </div>
                     </div>
                     <!--end item -->
 
-                    <div class="col-md-3 col-sm-6 col-xs-12 text-center animate-in" data-anim-type="fade-in-right" data-anim-delay="200">
+                    <div class="col-md-6 col-sm-6 col-xs-12 text-center animate-in" data-anim-type="fade-in-right" data-anim-delay="200">
                         <div class="feature-box-102 bmargin">
                             <div class="number-2"></div>
                             <br/>
                             <h4>Diseño</h4>
                             <p>Convertimos tú idea en un bonito diseño que podrás cambiar cuando desees.</p>
+                            <br>
+                            <img src="/static/images/servicio/2.png" alt="" class="img-responsive"/>
                         </div>
                     </div>
                     <!--end item -->
 
-                    <div class="col-md-3 col-sm-6 col-xs-12 text-center animate-in" data-anim-type="fade-in-right" data-anim-delay="300">
-                        <div class="feature-box-102 bmargin">
-                            <div class="number-3"></div>
-                            <br/>
-                            <h4>Implementación</h4>
-                            <p>Lanzamos tu proyecto a internet, con la mejor tecnología sobre la nube.</p>
-                        </div>
-                    </div>
-                    <!--end item -->
-
-                    <div class="col-md-3 col-sm-6 col-xs-12 text-center animate-in" data-anim-type="fade-in-right" data-anim-delay="400">
-                        <div class="feature-box-102 bmargin">
-                            <div class="number-4"></div>
-                            <br/>
-                            <h4>Pruebas</h4>
-                            <p>Generamos pruebas y lo ponemos a punto, para que puedas disfrutar de tu tecnología con los estandares de calidad esperados.</p>
-                        </div>
-                    </div>
-                    <!--end item -->
                 </div>
             </div>
         </section>
@@ -570,10 +486,10 @@
                             Praesent mattis commodo augue Aliquam ornare hendrerit augue Cras tellus In pulvinar lectus a
                             est Curabitur eget orci.</p>
                     </div>
-                    <div class="col-md-3">
+                    <!--div class="col-md-3">
                         <div class="margin-top2"></div>
                         <a class="btn btn-border white-2 btn-large" href="#">Read more</a>
-                    </div>
+                    </div-->
                 </div>
             </div>
         </section>
@@ -665,19 +581,11 @@
               </div>
 
               <div class="col-md-4">
-                <br/>
-                <h4>Dirección</h4>
-                No.28 - 63739 street lorem ipsum City, Country <br />
-                Telephone: +1 1234-567-89000<br />
-                FAX: +1 0123-4567-8900<br />
-                <br />
-                E-mail: <a href="mailto:email@example.com">email@example.com</a><br />
-                Website: <a href="index.html">www.example.com</a>
-                <div class="clearfix"></div>
-                <br/>
-                <h4>Encuéntranos</h4>
+                <h3>Principal</h3>
+                <p>Ubícanos en el cantón El Guabo</p>
+                  <br>
                 <div id="map" class="map-responsive">
-                  <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d26797.02771019412!2d-79.83638284761494!3d-3.249842018621041!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xa5f9863069bbf7dd!2sNodusnet!5e0!3m2!1ses!2sec!4v1613650437610!5m2!1ses!2sec" width="100%" height="300" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+                  <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d26797.02771019412!2d-79.83638284761494!3d-3.249842018621041!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xa5f9863069bbf7dd!2sNodusnet!5e0!3m2!1ses!2sec!4v1613650437610!5m2!1ses!2sec" width="100%" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
                 </div>
               </div>
             </div>
@@ -691,69 +599,69 @@
         <section class="section-fulldark sec-padding">
           <div class="container">
             <div class="row">
-            <div class="col-md-4 col-sm-12 colmargin clearfix">
-              <!--div class="footer-logo"><img src="/static/images/footer-logo.png" alt=""/></div-->
-              <div class="footer-logo"><img src="/media/{{principal.logo}}" style="width: 30%" alt=""/></div>
-              <ul class="address-info no-border">
-                <li><i class="fa fa-globe"></i>  {{  datosPrincipales.direccion }}</li>
-                <li><i class="fa fa-whatsapp"></i> {{  datosPrincipales.telefono }}</li>
-                <li class="last"><i class="fa fa-envelope"></i>  {{ datosPrincipales.email }}</li>
-              </ul>
+                <div class="col-md-4 col-sm-12 colmargin clearfix">
+                  <!--div class="footer-logo"><img src="/static/images/footer-logo.png" alt=""/></div-->
+                  <div class="footer-logo"><img src="/media/{{principal.logo}}" style="width: 30%" alt=""/></div>
+                  <ul class="address-info no-border">
+                    <li><i class="fa fa-globe"></i>  {{  datosPrincipales.direccion }}</li>
+                    <li><i class="fa fa-phone"></i>  {{  datosPrincipales.telefono }}</li>
+                    <li><i class="fa fa-whatsapp"></i> {{  datosPrincipales.whatsapp }}</li>
+                    <li><i class="fa fa-envelope"></i>  {{ datosPrincipales.email }}</li>
+                  </ul>
+                </div>
+                <!--end item-->
+
+                <div class="col-md-4 col-sm-12 colmargin tex-left clearfix">
+                  <h4 class="uppercase footer-title less-mar3">Links Importantes</h4>
+                  <div class="footer-title-bottomstrip"></div>
+                  <div class="clearfix"></div>
+                  <ul class="usefull-links tex-left no-border">
+                    <li><a href="#"><i class="fa fa-angle-right"></i> Placerat bibendum</a></li>
+                    <li><a href="#"><i class="fa fa-angle-right"></i> Ullamcorper odio nec turpis</a></li>
+                  </ul>
+                </div>
+                <!--end item-->
+
+                <div class="col-md-4 col-sm-12 colmargin clearfix">
+                  <h4 class="uppercase footer-title less-mar3">Desarrollo</h4>
+                  <div class="footer-title-bottomstrip"></div>
+                  <div class="image-left">
+                    <div class="fo-postimg-inner overflow-hidden"><img src="/static/images/site-img16.jpg" alt=""/></div>
+                  </div>
+                  <div class="text-box-right">
+                    <h5 class="text-white less-mar3"><a href="#">Dizof</a></h5>
+                    <span>Desarrollo Web</span>
+                    <div class="footer-post-info"><span>El Guabo</span></div>
+                  </div>
+                  <!--div class="divider-line solid dark margin opacity-5"></div>
+                  <div class="image-left">
+                    <div class="fo-postimg-inner overflow-hidden"><img src="/static/images/site-img17.jpg" alt=""/></div>
+                  </div>
+                  <div class="text-box-right">
+                    <h5 class="text-white less-mar3"><a href="#">Filmers</a></h5>
+                    <span>Contenidos Media</span>
+                    <div class="footer-post-info"> <span>El </span><span> Guabo</span> </div>
+                  </div-->
+                </div>
+                <!--end item-->
+
+                <!--div class="col-md-3 col-sm-12 colmargin clearfix">
+                  <h4 class="uppercase footer-title less-mar3">Tags</h4>
+                  <div class="footer-title-bottomstrip"></div>
+                  <ul class="footer-tags">
+                    <li><a href="#">Animation</a></li>
+                    <li><a href="#">Art</a></li>
+                    <li><a href="#">Photography</a></li>
+                    <li><a class="active" href="#">Design</a></li>
+                    <li><a href="#">Responsive</a></li>
+                    <li><a href="#">Develop</a></li>
+                    <li><a href="#">Branding</a></li>
+                    <li><a href="#">Clean</a></li>
+                  </ul>
+                </div-->
+                <!--end item-->
+
             </div>
-            <!--end item-->
-
-            <div class="col-md-4 col-sm-12 colmargin tex-left clearfix">
-              <h4 class="uppercase footer-title less-mar3">Links Importantes</h4>
-              <div class="footer-title-bottomstrip"></div>
-              <div class="clearfix"></div>
-              <ul class="usefull-links tex-left no-border">
-                <li><a href="#"><i class="fa fa-angle-right"></i> Placerat bibendum</a></li>
-                <li><a href="#"><i class="fa fa-angle-right"></i> Ullamcorper odio nec turpis</a></li>
-
-              </ul>
-            </div>
-            <!--end item-->
-
-            <div class="col-md-4 col-sm-12 colmargin clearfix">
-              <h4 class="uppercase footer-title less-mar3">Desarrollo</h4>
-              <div class="footer-title-bottomstrip"></div>
-              <div class="image-left">
-                <div class="fo-postimg-inner overflow-hidden"><img src="/static/images/site-img16.jpg" alt=""/></div>
-              </div>
-              <div class="text-box-right">
-                <h5 class="text-white less-mar3"><a href="#">Dizof</a></h5>
-                <span>Desarrollo Web & Apps</span>
-                <div class="footer-post-info"> <span>El </span><span>Guabo</span> </div>
-              </div>
-              <!--div class="divider-line solid dark margin opacity-5"></div>
-              <div class="image-left">
-                <div class="fo-postimg-inner overflow-hidden"><img src="/static/images/site-img17.jpg" alt=""/></div>
-              </div>
-              <div class="text-box-right">
-                <h5 class="text-white less-mar3"><a href="#">Filmers</a></h5>
-                <span>Contenidos Media</span>
-                <div class="footer-post-info"> <span>El </span><span> Guabo</span> </div>
-              </div-->
-            </div>
-            <!--end item-->
-
-            <!--div class="col-md-3 col-sm-12 colmargin clearfix">
-              <h4 class="uppercase footer-title less-mar3">Tags</h4>
-              <div class="footer-title-bottomstrip"></div>
-              <ul class="footer-tags">
-                <li><a href="#">Animation</a></li>
-                <li><a href="#">Art</a></li>
-                <li><a href="#">Photography</a></li>
-                <li><a class="active" href="#">Design</a></li>
-                <li><a href="#">Responsive</a></li>
-                <li><a href="#">Develop</a></li>
-                <li><a href="#">Branding</a></li>
-                <li><a href="#">Clean</a></li>
-              </ul>
-            </div-->
-            <!--end item-->
-
-          </div>
           </div>
         </section>
         <!--end section-->
@@ -764,13 +672,13 @@
             <div class="row">
               <div class="col-md-12">
                 <ul class=" social-icons-3">
-                  <li><a href=""><i class="fa fa-facebook"></i></a></li>
-                  <li><a href="https://www.instagram.com/nodusnet.ec" target="_blank"><i class="fa fa-instagram"></i></a></li>
-                  <li><a href="{{ datosPrincipales.youtube }}"><i class="fa fa-whatsapp"></i></a></li>
+                  <li><a href="{{ datosPrincipales.facebook }}" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                  <li><a href="{{ datosPrincipales.instagram }}" target="_blank"><i class="fa fa-instagram"></i></a></li>
+                  <li><a href="{{ datosPrincipales.whatsapp }}" target="_blank"><i class="fa fa-whatsapp"></i></a></li>
                 </ul>
                 <div class="clearfix"></div>
                 <br/>
-                <span>Copyright © 2020 <a href="www.dizof.com">Dizof</a> | All rights reserved.</span>
+                <span>Copyright © 2020 <a href="www.dizof.com" target="_blank">Dizof</a> | All rights reserved.</span>
               </div>
             </div>
           </div>

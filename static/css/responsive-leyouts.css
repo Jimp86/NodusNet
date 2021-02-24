@@ -1844,8 +1844,8 @@ white-space: nowrap;
 	margin-bottom:20px;
 }
 .text-box-right {
-    float: left;
-    margin: 20px 0 20px 0;
+    /*float: left;*/
+    margin: 20px 0 10px 0;
     padding: 0;
     text-align: left;
     width: 100%;
@@ -1893,7 +1893,7 @@ white-space: nowrap;
 }
 
 .sec-padding {
-    padding: 40px 0px;
+    padding: 30px 0px 0px 0px;
 }
 .sec-tpadding{
 	padding:35px 0 0 0;

@@ -3,7 +3,7 @@ from django.shortcuts import render
 # Create your views here.
 
 
-from Home.models import Principal, Slider, Nosotros, Servicios, DatosPrincipales, Home, Pymes
+from Home.models import Principal, Slider, Nosotros, Servicios, DatosPrincipales, Home, Pymes, Planes
 
 
 def index(request):
@@ -15,6 +15,7 @@ def index(request):
         "servicios": Servicios.objects.all(),
         "home": Home.objects.all(),
         "pymes": Pymes.objects.all(),
+        "planes": Planes.objects.all(),
 
         # "historia":Nosotros.objects.filter(tipo="Historia").first(),
         # "pasion":Nosotros.objects.filter(tipo="Pasion").first(),

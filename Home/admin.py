@@ -35,9 +35,13 @@ class AdminHome(admin.ModelAdmin):
     list_display = Attr(Home)
 
 @admin.register(Pymes)
-class AdminHome(admin.ModelAdmin):
+class AdminPymes(admin.ModelAdmin):
     list_display_links = Attr(Pymes)
     list_display = Attr(Pymes)
 
+@admin.register(Planes)
+class AdminPlanes(admin.ModelAdmin):
+    list_display_links = Attr(Planes)
+    list_display = Attr(Planes)
 
 

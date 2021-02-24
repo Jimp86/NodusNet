@@ -30,6 +30,7 @@ class DatosPrincipales(models.Model):
     direccion=models.CharField(max_length=60)
     telefono=models.CharField(max_length=60)
     email=models.EmailField(max_length=120)
+    whatsapp=models.URLField(max_length=500, null=True, blank=True)
     facebook=models.URLField(max_length=500,null=True,blank=True)
     instagram=models.URLField(max_length=500,null=True,blank=True)
     youtube=models.URLField(max_length=500,null=True,blank=True)
@@ -72,7 +73,7 @@ class Servicios(models.Model):
         verbose_name_plural="2. Servicios"
 
 class Home(models.Model):
-    categoria = models.ForeignKey(Servicios, on_delete=models.CASCADE)
+    #categoria = models.ForeignKey(Servicios, on_delete=models.CASCADE)
     icono = models.CharField(default="icon-lightbulb", max_length=30)
     nombre = models.CharField(max_length=60)
     descripcion = models.TextField(max_length=200)
@@ -90,6 +91,22 @@ class Pymes(models.Model):
     class Meta:
         verbose_name_plural = "2.2 Pymes"
 
+class Planes(models.Model):
+    #categoria = models.ForeignKey(Servicios, on_delete=models.CASCADE)
+    icono = models.CharField(max_length=20, choices=(("fa fa-home", "fa fa-home"), ("fa fa-archive", "fa fa-archive"), ("fa fa-gamepad", "fa fa-gamepad"), ("fa fa-camera", "fa fa-camera")))
+    nombre = models.CharField(max_length=20, choices=(("Básico", "Básico"), ("Standard", "Standard"), ("Premiun", "Premium"), ("Experto", "Experto")))
+    megas = models.CharField(max_length=20, choices=(("20 Mbps", "20 Mbps"), ("30 Mbps", "30 Mbps"), ("60 Mbps", "60 Mbps"), ("100 Mbps", "100 Mbps")))
+    precio = models.CharField(max_length=10, choices=(("20.00", "20.00"), ("25.00", "25.00"), ("35.00", "35.00"), ("60.00", "60.00")))
+    conexion = models.CharField(default="Simétrica", max_length=20)
+    comparticion = models.CharField(default="1:1", max_length=10)
+    dispositivos = models.CharField(max_length=20, choices=(("1/4", "1/4"), ("5/8", "5/8"), ("9/15", "9/15"), ("10/25", "10/25")))
+    juegosmoviles = models.CharField(max_length=20)
+    juegosonline = models.CharField(max_length=20)
+    netflix = models.CharField(max_length=20)
+    info = models.CharField(max_length=20)
+
+    class Meta:
+        verbose_name_plural = "2.3 Planes"
 
 #class Categoria(models.Model):
 #    nombre=models.CharField(max_length=50, help_text="No mas de 50 Caracteres")
