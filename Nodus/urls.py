@@ -21,8 +21,8 @@ from django.conf.urls.static import static
 from Home.views import *
 
 urlpatterns = [
-    path('jet/', include('jet.urls', 'jet')),
-    path('jet/dashboard/', include('jet.dashboard.urls', 'jet-dashboard')),
+    #path('jet/', include('jet.urls', 'jet')),
+    #path('jet/dashboard/', include('jet.dashboard.urls', 'jet-dashboard')),
     path('admin/', admin.site.urls),
     path('', index, name="index"),
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

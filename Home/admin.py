@@ -24,20 +24,25 @@ class AdminSlider(admin.ModelAdmin):
     list_display_links = Attr(Slider)
     list_display = Attr(Slider)
 
-@admin.register(Servicios)
+@admin.register(Servicio)
 class AdminServicios(admin.ModelAdmin):
-    list_display_links = Attr(Servicios)
-    list_display = Attr(Servicios)
+    list_display_links = Attr(Servicio)
+    list_display = Attr(Servicio)
 
-@admin.register(Home)
+@admin.register(Detalles)
 class AdminHome(admin.ModelAdmin):
-    list_display_links = Attr(Home)
-    list_display = Attr(Home)
+    list_display_links = Attr(Detalles)
+    list_display = Attr(Detalles)
 
-@admin.register(Pymes)
+@admin.register(Aplicacion)
 class AdminPymes(admin.ModelAdmin):
-    list_display_links = Attr(Pymes)
-    list_display = Attr(Pymes)
+    list_display_links = Attr(Aplicacion)
+    list_display = Attr(Aplicacion)
+
+@admin.register(Aplicaciones)
+class AdminPymes(admin.ModelAdmin):
+    list_display_links = Attr(Aplicaciones)
+    list_display = Attr(Aplicaciones)
 
 @admin.register(Planes)
 class AdminPlanes(admin.ModelAdmin):

@@ -56,6 +56,7 @@ class Slider(models.Model):
     class Meta:
         verbose_name_plural="1.2 Sliders"
 
+
 class Nosotros(models.Model):
     icono=models.CharField(default="icon-lightbulb", max_length=30)
     titulo=models.CharField(max_length=100,null=True,blank=True)
@@ -64,32 +65,48 @@ class Nosotros(models.Model):
     class Meta:
         verbose_name_plural="1.3 Nosotros"
 
-class Servicios(models.Model):
-    categorias = models.CharField(max_length=30, choices=(("HOME", "HOME"), ("PYMES", "PYMES")))
-    descripcion = models.TextField(max_length=200)
+
+class Servicio(models.Model):
+    titulo = models.CharField(max_length=60)
+    concepto = models.TextField(max_length=200)
+    nota = models.TextField(max_length=60)
+    imagen = models.ImageField(upload_to="Servicio")
+    subtitulo = models.CharField(max_length=60)
+
+    class Meta:
+        verbose_name_plural="2. Servicio"
+
+
+class Detalles(models.Model):
+    nombre = models.CharField(max_length=60)
     detalle = models.CharField(max_length=60)
-
-    class Meta:
-        verbose_name_plural="2. Servicios"
-
-class Home(models.Model):
-    #categoria = models.ForeignKey(Servicios, on_delete=models.CASCADE)
-    icono = models.CharField(default="icon-lightbulb", max_length=30)
-    nombre = models.CharField(max_length=60)
     descripcion = models.TextField(max_length=200)
+    imagen = models.ImageField(upload_to="Detalles")
 
     class Meta:
-        verbose_name_plural="2.1 Home"
+        verbose_name_plural="2.1 Detalles Servicio"
 
 
-class Pymes(models.Model):
-    #categoria = models.ForeignKey(Servicios, on_delete=models.CASCADE)
-    icono = models.CharField(default="icon-lightbulb", max_length=30)
+class Aplicacion(models.Model):
+    titulo = models.CharField(max_length=60)
+    concepto = models.TextField(max_length=200)
+    nota = models.TextField(max_length=60)
+    imagen = models.ImageField(upload_to="Aplicacion")
+    subtitulo = models.CharField(max_length=60)
+
+    class Meta:
+        verbose_name_plural="2.2 Aplicación"
+
+
+class Aplicaciones(models.Model):
     nombre = models.CharField(max_length=60)
+    detalle = models.CharField(max_length=60)
     descripcion = models.TextField(max_length=200)
+    imagen = models.ImageField(upload_to="Aplicaciones")
 
     class Meta:
-        verbose_name_plural = "2.2 Pymes"
+        verbose_name_plural="2.3 Aplicaciones"
+
 
 class Planes(models.Model):
     #categoria = models.ForeignKey(Servicios, on_delete=models.CASCADE)

@@ -204,10 +204,11 @@
             <div class="row">
               <div class="col-md-6 screens-top-padding bmargin text-center">
                 <br>
-                <h1 class="font-weight-6 less-mar1 nopadding">Buscas <span class="text-orange-2">Velocidad</span></h1>
+                {% for servicio in servicio %}
+                <h1 class="font-weight-6 less-mar1 nopadding"><span class="text-orange-2">{{ servicio.titulo }}</span></h1>
                 <br>
-                <h5>En Nodusnet sabemos lo importante que es tu tiempo, y queremos que lo aproveches al máximo con nuestro servicio...</h5>
-                <p>Nos sentimos orgullosos de ser los proveedores que mejor....</p>
+                <h5>{{ servicio.concepto }}</h5>
+                <p>{{ servicio.nota }}</p>
                 <br/>
                 <!--div class="iconbox-xtiny left round grayoutline2"><i class="fa fa-apple"></i></div>
                 <div class="iconbox-xtiny left round grayoutline2"><i class="fa fa-android"></i></div>
@@ -220,15 +221,44 @@
               <!--end item-->
 
               <div class="col-md-6 bmargin">
-                <img src="/static/images/servicio/1.png" alt="" class="img-responsive"/>
+                <img src="/media/{{ servicio.imagen }}" alt="" class="img-responsive"/>
               </div>
               <!--end item-->
+                <br>
+              <div class="container">
+              <div class="row">
+                <div class="col-xs-12 text-center">
+                  <h6 class="nopadding lspace-1">Who We Are</h6>
+                  <h1 class="paddtop1 dosis font-weight-5 lspace-sm"><span class="text-orange-2">{{ servicio.subtitulo }}</span></h1>
+                  <div class="title-line-4 align-center"></div>
+                </div>
+                {% endfor %}
+                <div class="clearfix"></div>
+                {% for detalles in detalles %}
+                <div class="col-md-4 col-sm-6">
+                  <div class="team-holder15 two bmargin">
+                    <div class="team-member"><img src="/media/{{ detalles.imagen }}" alt="" class="img-responsive"/></div>
+                    <div class="info-box text-center">
+                      <h5 class="uppercase less-mar2">{{ detalles.nombre }}</h5>
+                      <span class="text-orange-2">{{ detalles.detalle }}</span> <br/>
+                      <br/>
+                      <p>{{ detalles.descripcion }}</p>
+                    </div>
+                  </div>
+                </div>
+                {% endfor %}
+                <!--end item-->
+
+              </div>
+            </div>
 
             </div>
           </div>
         </section>
         <!-- end section -->
         <div class="clearfix"></div>
+
+
 
         {# video #}
         <section>
@@ -260,10 +290,11 @@
             <div class="row">
               <div class="col-md-6 screens-top-padding bmargin text-center">
                 <br>
-                <h1 class="font-weight-6 less-mar1 nopadding">Buscas <span class="text-orange-2">Velocidad</span></h1>
+                  {% for aplicacion in aplicacion %}
+                <h1 class="font-weight-6 less-mar1 nopadding"><span class="text-orange-2">{{ aplicacion.titulo }}</span></h1>
                 <br>
-                <h5>En Nodusnet sabemos lo importante que es tu tiempo, y queremos que lo aproveches al máximo con nuestro servicio...</h5>
-                <p>Nos sentimos orgullosos de ser los proveedores que mejor....</p>
+                <h5>{{ aplicacion.concepto }}</h5>
+                <p>{{ aplicacion.notas }}</p>
                 <br/>
                 <!--div class="iconbox-xtiny left round grayoutline2"><i class="fa fa-apple"></i></div>
                 <div class="iconbox-xtiny left round grayoutline2"><i class="fa fa-android"></i></div>
@@ -277,9 +308,37 @@
               <!--end item-->
 
               <div class="col-md-6 bmargin">
-                <img src="/static/images/servicio/2.png" alt="" class="img-responsive"/>
+                <img src="/media/{{ aplicacion.imagen }}" alt="" class="img-responsive"/>
               </div>
               <!--end item-->
+
+                <br>
+              <div class="container">
+              <div class="row">
+                <div class="col-xs-12 text-center">
+                  <h6 class="nopadding lspace-1">Who We Are</h6>
+                  <h1 class="paddtop1 dosis font-weight-5 lspace-sm"><span class="text-orange-2">{{ aplicacion.subtitulo }}</span></h1>
+                  <div class="title-line-4 align-center"></div>
+                </div>
+                {% endfor %}
+                <div class="clearfix"></div>
+                {% for aplicaciones in aplicaciones %}
+                <div class="col-md-3 col-sm-6">
+                  <div class="team-holder15 two bmargin">
+                    <div class="team-member"><img src="/media/{{ aplicaciones.imagen }}" alt="" class="img-responsive"/></div>
+                    <div class="info-box text-center">
+                      <h5 class="uppercase less-mar2">{{ aplicaciones.nombre }}</h5>
+                      <span class="text-orange-2">{{ aplicaciones.detalle }}</span> <br/>
+                      <br/>
+                      <p>{{ aplicaciones.descripcion }}</p>
+                    </div>
+                  </div>
+                </div>
+                {% endfor %}
+                <!--end item-->
+
+              </div>
+            </div>
 
             </div>
           </div>
@@ -296,18 +355,17 @@
                     <div class="clearfix"></div>
                     <div id="owl-demo3" class="owl-carousel">
                       {# icons #}
-                      {% for home in home %}
-                      <div class="col-md-12">
+                      <!--div class="col-md-3">
+                        {% for home in home %}
                         <h1 class="paddtop1 dosis font-weight-5 text-white lspace-sm text-center animate-in" data-anim-type="fade-in-up" data-anim-delay="100"><span class="text-white">{{ home.nombre }}</span></h1>
                         <br>
                         <div class="iconbox-xlarge text-center animate-in" data-anim-type="fade-in-up" data-anim-delay="200"><span class="text-orange-2, {{home.icono }}"></span></div>
-                        <br>
+                        <!--br>
                         <h4 class="text-white less-mar1 text-center animate-in" data-anim-type="fade-in-down" data-anim-delay="300">{{ home.descripcion }}</h4>
-                        <br/>
+                        <br/-->
+                        {% endfor %}
                       </div>
-                      {% endfor %}
                       <!--end item-->
-
                       <!--end slide item-->
                     </div>
                     <!--end carousel -->
